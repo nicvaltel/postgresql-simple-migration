@@ -1,3 +1,6 @@
+Original repository has been archived by the owner on Sep 20, 2021.
+Raised dependency version upper bounds.
+
 # PostgreSQL Migrations for Haskell
 
 [![Build Status](https://api.travis-ci.org/ameingast/postgresql-simple-migration.png)](https://travis-ci.org/ameingast/postgresql-simple-migration)

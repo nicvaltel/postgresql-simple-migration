@@ -1,0 +1,43 @@
+Library
+    exposed-modules:        Database.PostgreSQL.Simple.Migration
+                            Database.PostgreSQL.Simple.Util
+    hs-source-dirs:         src
+    ghc-options:            -Wall -fwarn-tabs -fwarn-incomplete-uni-patterns
+    default-extensions:     OverloadedStrings, CPP, LambdaCase
+    default-language:       Haskell2010
+    build-depends:          base                        >= 4.6      && < 5.0,
+                            base64-bytestring           == 1.2.1.0,
+                            bytestring                  ==  0.11.5.3,
+                            cryptohash                  >= 0.11     && < 0.12,
+                            directory                   >= 1.2      && < 1.4,
+                            postgresql-simple           >= 0.4      && < 0.7,
+                            time                        == 1.11.1.1
+
+Executable migrate
+    main-is:                Main.hs
+    hs-source-dirs:         src
+    ghc-options:            -Wall -fwarn-tabs -fwarn-incomplete-uni-patterns
+    default-extensions:     OverloadedStrings, CPP, LambdaCase
+    default-language:       Haskell2010
+    build-depends:          base                        >= 4.6      && < 5.0,
+                            base64-bytestring           == 1.2.1.0,
+                            bytestring                  ==  0.11.5.3,
+                            cryptohash                  >= 0.11     && < 0.12,
+                            directory                   >= 1.2      && < 1.4,
+                            postgresql-simple           >= 0.4      && < 0.7,
+                            time                        >= 1.11.1.1,
+                            text                        == 2.0.2
+
+test-suite tests
+    main-is:                Main.hs
+    hs-source-dirs:         test
+    other-modules:          Database.PostgreSQL.Simple.MigrationTest
+    ghc-options:            -Wall -fwarn-tabs -fwarn-incomplete-uni-patterns
+    default-extensions:     OverloadedStrings, CPP, LambdaCase
+    default-language:       Haskell2010
+    type:                   exitcode-stdio-1.0
+    build-depends:          base                        >= 4.6      && < 5.0,
+                            bytestring                  ==  0.11.5.3,
+                            postgresql-simple           >= 0.4      && < 0.7,
+                            hspec                       == 2.11.9,
+                            postgresql-simple-migration
